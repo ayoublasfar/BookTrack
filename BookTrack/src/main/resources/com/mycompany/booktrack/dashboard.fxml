@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<?import javafx.geometry.Pos?> 
+<?import javafx.scene.layout.HBox?> 
+<?import javafx.scene.layout.VBox?> 
+<?import javafx.scene.chart.PieChart?> 
+<?import javafx.scene.control.Label?> 
+<?import javafx.geometry.Pos?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.booktrack.DashboardController" spacing="20" alignment="CENTER" maxWidth="Infinity" maxHeight="Infinity">
+    <Label text="Welcome to Your Dashboard!" style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #2C3E50;"/>
+    <Label text="Click on the sidebar to manage books, users, and loans." style="-fx-font-size: 18px; -fx-text-fill: #7F8C8D;"/>
+
+    <!-- Stats Cards -->
+<HBox spacing="20" alignment="CENTER" maxWidth="Infinity">
+    <!-- Card for Total Books -->
+    <VBox alignment="CENTER" spacing="15" style="-fx-background-color: #FFFFFF; -fx-padding: 20; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.15), 5, 0, 0, 2); -fx-border-color: #BDC3C7; -fx-border-width: 2;" maxWidth="200">
+        <Label text="Total Books" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #34495E;"/>
+        <Label fx:id="totalBooksLabel" text="0" style="-fx-font-size: 24px; -fx-text-fill: #2C3E50;"/>
+    </VBox>
+    
+    <!-- Card for Active Users -->
+    <VBox alignment="CENTER" spacing="15" style="-fx-background-color: #FFFFFF; -fx-padding: 20; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.15), 5, 0, 0, 2); -fx-border-color: #BDC3C7; -fx-border-width: 2;" maxWidth="200">
+        <Label text="Active Users" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #34495E;"/>
+        <Label fx:id="activeUsersLabel" text="0" style="-fx-font-size: 24px; -fx-text-fill: #2C3E50;"/>
+    </VBox>
+    
+    <!-- Card for Books in Loan -->
+    <VBox alignment="CENTER" spacing="15" style="-fx-background-color: #FFFFFF; -fx-padding: 20; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.15), 5, 0, 0, 2); -fx-border-color: #BDC3C7; -fx-border-width: 2;" maxWidth="200">
+        <Label text="Books in Loan" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #34495E;"/>
+        <Label fx:id="booksInLoanLabel" text="0" style="-fx-font-size: 24px; -fx-text-fill: #2C3E50;"/>
+    </VBox>
+    
+    <!-- Card for Late Loans -->
+    <VBox alignment="CENTER" spacing="15" style="-fx-background-color: #FFFFFF; -fx-padding: 20; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.15), 5, 0, 0, 2); -fx-border-color: #BDC3C7; -fx-border-width: 2;" maxWidth="200">
+        <Label text="Late Loans" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #34495E;"/>
+        <Label fx:id="lateLoansLabel" text="0" style="-fx-font-size: 24px; -fx-text-fill: #2C3E50;"/>
+    </VBox>
+</HBox>
+
+
+    <!-- HBox for Pie Charts Side by Side -->
+    <HBox spacing="20" alignment="CENTER" maxWidth="Infinity" maxHeight="Infinity">
+        <!-- Pie Chart for Loans in Progress -->
+        <PieChart fx:id="loanPieChart" style="-fx-background-color: #FFFFFF; -fx-border-radius: 20; -fx-padding: 20; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.15), 10, 0.2, 0, 5);" 
+                  minWidth="200" minHeight="200" maxWidth="600" maxHeight="600" />
+
+        <!-- Pie Chart for Active Users -->
+        <PieChart fx:id="activeUsersPieChart" style="-fx-background-color: #FFFFFF; -fx-border-radius: 20; -fx-padding: 20; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.15), 10, 0.2, 0, 5);"
+                  minWidth="200" minHeight="200" maxWidth="600" maxHeight="600" />
+
+        <!-- Pie Chart for Late Loans -->
+        <PieChart fx:id="lateLoansPieChart" style="-fx-background-color: #FFFFFF; -fx-border-radius: 20; -fx-padding: 20; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.15), 10, 0.2, 0, 5);"
+                  minWidth="200" minHeight="200" maxWidth="600" maxHeight="600" />
+    </HBox>
+</VBox>
